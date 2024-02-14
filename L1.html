@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi primera página web</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
@@ -14,13 +15,27 @@
         <p>A01705408@tec.mx</p>
     </header>
 
+    <table>
+        <thead>
+            <tr><th>Comida</th><th>Minerales</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Manzana</td><td id="diamantes">Diamante</td></tr>
+        </tbody>
+        <tfoot>
+            <tr><td colspan="2">Tabla de objetos de Minecraft</td></tr>
+        </tfoot>
+        
+    </table>
+
     <!--Diferencia entre main y body?? parece lo mismo-->
-    <h1>Aficiones</h1>
+    <h1 class="red">Aficiones</h1>
     <main>
+        <div class="bg">
         <p>
             Me gusta bastante programar, y el aprender un lenguaje nuevo me está poniendo muy feliz, la verdad. solo <strong>NO</strong> inspeccione la página o de clic en origen, se arrepentira y se mareará 💀💀 
         </p>
-        <p>También me encanta gastar el 30% de mi vida en TikTok  😍😍💀</p>
+        <p class="blue">También me encanta gastar el 30% de mi vida en TikTok  😍😍💀</p>
         <p>
             Me gustan bastante los videojuegos, especialmente los shooters en primera persona, 
             pero últimamente he jugado bastante el <strong>Baldur's Gate 3</strong> y debo decirle que es la
@@ -42,8 +57,8 @@
             Al chile esta actividad me la ando pasando bien padre, no se cuanto tiempo llevo escribiendo, 
             pero me gustó andar descubriendo estas formas de mostrar un mensaje</p>
         
-        Mi color preferido quizás sea el:
-        <input type="color" name="Preferido" value="#8D5C68"> 
+        <p>Mi color preferido quizás sea el:
+        <input type="color" name="Preferido" value="#8D5C68"></p> 
         <br>
         <br>
         <p>Como podrá ver, hice mucha investigación por cuenta propia</p>
@@ -103,13 +118,25 @@
 -	Muere cuando el sistema no satisface las necesidades, ya sea por innovación tecnológica, o pasa a ser obsoleto.
         <h2>¿Cuál es el ciclo de desarrollo de sistemas de información?</h2>
         -	Identificación de necesidades y planificación, análisis de requerimientos, diseño del sistema, desarrollo e implementación, pruebas y validación, despliegue y mantenimiento, y por último evaluación y mejora continua. 
-    </main>
-
     
+        <h2>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS?</h2>
+            - !important es una herramienta muy buena, establece prioridades a los estilos, mas considero que podría llegar a dificultar el proceso de 
+            diseño, esto lo menciono porque quizás pueda confundir a las personas que intenten leer nuestro archivo CSS
+        <h2>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</h2>
+        - Primero, la legibilidad del texto es lo más importante al crear una página web, es por el texto que creamos la página (en la mayoría de veces)
+        Del mismo modo, utilizar una imagen como fondo puede hacer que los tiempos de carga de la página pueda alargarse, así haciendo mucho menos placentera
+        la experiencia del usuario.
+        <h2>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</h2>
+        - Considero que es completamente dependiente de lo que estemos haciendo, pt o puntos es la escala que utilizan los procesadores de texto como Word,
+        convirtiendolo en una unidad útil, pero son dependientes de la resolución de tu pantalla. Lo mismo sucede con los px o pixeles, que aunque sean
+        la unidad absoluta, cada pantalla cuenta con una cantidad diferente de pixeles, haciendo muy complicado unificar a todos los dispositivos.
+        Personalmente, prefiero utilizar los porcentajes, soluciona nuestro problema con la perspectiva desde cada dispositivo.
+        <h2>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</h2>
+        - De primeras, el tamaño se reducirá, que en casos mucho más avanzados puede mejorar la portabilidad del archivo. Debemos de recordar que uno sube a un servidor estos archivos
+        tanto los html como los CSS, esto significa que mientras hagamos archivos más ligeros, podremos aumentar la velocidad de transferecnia (servidor a navegador)
+        y la velocidad de renderizado que realiza el navegador al cargar la página. Es por todo esto que el uso de archivos minimizados mejora el rendimiento de los sitios web.
+    </main>
     <footer>
-        He de decir que no supe como exportarlo como URL entonces es un archivo y utilicé la herramienta para validarlo, además de la extensión
-        <a href="https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser">Open in browser</a>  de VsCode
-        <br>
         Se utilizó Visual Studio Code, el link está
         <a href="https://code.visualstudio.com/download">aquí</a>
         <br>
@@ -127,5 +154,6 @@
     </footer>
     <!--Necesidad de footer y header? no parece hacer mucho-->
 </body>
+</div>
 
 </html>
