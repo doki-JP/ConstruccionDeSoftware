@@ -37,3 +37,38 @@ const desayuno = (comida) => {
     console.log("El desayuno de hoy es "+comida);
 }
 desayuno("huevito")
+//arreglos
+const arreglo = ["Elemento", "jijija"]
+const arreglo1 = new Array();
+arreglo.push(123)
+
+console.log(arreglo)
+//Acá abajo va a extender el arreglo y lo colocará en el 10, los no ocupados van a ser nulos
+arreglo[10]="bromita"
+arreglo["dos"] = 45
+
+for (let c =0;c<arreglo.length;c++){
+    console.log(arreglo[c])
+}
+
+for (let celda in arreglo){
+    console.log(celda)
+}
+
+//Objetos
+
+const objeto = {atributo: "valor", atributo2:"valor2"}
+objeto.atributo3 = "caca"
+console.log(objeto)
+
+
+for (let attr of arreglo){
+    console.log(attr)
+}
+
+for (let attr in objeto){
+    console.log(attr)
+}
+
+//modificar html
+document.write("hola")
