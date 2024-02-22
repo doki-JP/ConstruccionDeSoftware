@@ -1,3 +1,4 @@
+/*
 console.log("Hola");
 console.info("Info");
 console.warn("Cuidado");
@@ -27,7 +28,7 @@ if (hambre) {
 
 //funciones
 function construir (){
-    console.log("Fua chaval, menuda polla")
+    console.log("se construyó")
 }
 construir();
 //operador flecha y funcion anónima ()
@@ -71,4 +72,96 @@ for (let attr in objeto){
 }
 
 //modificar html
-document.write("hola")
+document.write("hola")*/
+
+//Ejercicio #1
+/*
+let numero = prompt("Dame un número")
+document.write("<table border='1'>");
+document.write("<tr><th>Número</th><th>Cuadrado</th><th>Cubo</th></tr>")
+for (let c = 1; c <= numero; c++) {
+    let cuadrado = c * c;
+    let cubo = c * c * c;
+    document.write("<tr>");
+    document.write("<td>" + c + "</td>");
+    document.write("<td>" + cuadrado + "</td>");
+    document.write("<td>" + cubo + "</td>");
+    document.write("</tr>");
+}
+*/
+//Ejercicio #2
+/*
+let num1 = Math.floor(Math.random() * 100) + 1;
+let num2 = Math.floor(Math.random() * 100) + 1;
+let sumaCorrecta = num1 + num2;
+let tiempoInicio = Date.now();
+let respuestaUsuario = prompt("¿Cuál es la suma de " + num1 + " + " + num2 + "?");
+let tiempoFin = Date.now();
+let tiempoTranscurrido = (tiempoFin - tiempoInicio) / 1000;
+
+if (respuestaUsuario == sumaCorrecta) {
+    document.write("¡Respuesta correcta! <br>");
+} else {
+    document.write("Respuesta incorrecta. <br>");
+}
+document.write("Tiempo transcurrido: " + tiempoTranscurrido + " segundos.");
+*/
+
+//Ejercicio 3
+function E3(numeros) {
+    var negativos = 0;
+    var ceros = 0;
+    var positivos = 0;
+    for (let c = 0; c < numeros.length; c++) {
+        if (numeros[c] < 0) {
+            // Incrementar el contador de números negativos
+            negativos++;
+        } else if (numeros[c] === 0) {
+            // Incrementar el contador de ceros
+            ceros++;
+        } else {
+            // Incrementar el contador de valores mayores a cero
+            positivos++;
+        }
+    }
+    return {
+        negativos: negativos,
+        ceros: ceros,
+        positivos: positivos
+    };
+}
+//Casos de prueba
+var numeros = [3, -2, 0, 5, -1, 0, 2];
+var resultados = E3(numeros);
+console.log("Cantidad de números negativos:", resultados.negativos);
+console.log("Cantidad de ceros:", resultados.ceros);
+console.log("Cantidad de valores mayores a cero:", resultados.positivos);
+
+//Ejercicio 4
+function E4(matriz) {
+    let promediosArray = [];
+    for (let i = 0; i < matriz.length; i++) {
+        let fila = matriz[i];
+        let suma = 0;
+        for (let j = 0; j < fila.length; j++) {
+            suma += fila[j];
+        }
+        let promedio = suma / fila.length;
+        promediosArray.push(promedio);
+    }
+    return promediosArray;
+}
+let matriz = [
+    [10, 20, 30],
+    [15, 25, 35],
+    [5, 10, 15]
+];
+let promediosResultantes = E4(matriz);
+console.log("Promedios de cada fila:", promediosResultantes);
+
+//Ejercicio 5
+
+
+
+
+
