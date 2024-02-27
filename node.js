@@ -183,7 +183,35 @@ const server = http.createServer((request, response) =>{
         response.end()
     }
     else if (request.url == "/construir"){
-        
+        request.on('data',(data) =>{
+            console.log(data)
+        })
+        response.write(`
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Mi primera página web</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sakura.css/css/sakura.css" type="text/css">
+            <link rel="stylesheet" href="estilomin.css">
+        </head>
+        <body>
+        <title>Agregar una construcción</title>
+<form action="construir" method = "POST">
+    <label class="label" for="nombre">Nombre</label>
+    <input id="nombre" type="text" class="input"><br>
+    <label class="label" for="imagen">Imagen</label>
+    <input id="imagen" type="text" class="input"><br>
+    <input class="button" type="submit" vale="Construir">
+</form>
+        </body>
+        </html>
+        `)
+
+
+        response.end()
+    
     }
     else {
         

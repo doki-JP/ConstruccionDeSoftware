@@ -75,7 +75,7 @@ for (let attr in objeto){
 document.write("hola")*/
 
 //Ejercicio #1
-/*
+
 let numero = prompt("Dame un número")
 document.write("<table border='1'>");
 document.write("<tr><th>Número</th><th>Cuadrado</th><th>Cubo</th></tr>")
@@ -88,9 +88,8 @@ for (let c = 1; c <= numero; c++) {
     document.write("<td>" + cubo + "</td>");
     document.write("</tr>");
 }
-*/
+
 //Ejercicio #2
-/*
 let num1 = Math.floor(Math.random() * 100) + 1;
 let num2 = Math.floor(Math.random() * 100) + 1;
 let sumaCorrecta = num1 + num2;
@@ -105,7 +104,7 @@ if (respuestaUsuario == sumaCorrecta) {
     document.write("Respuesta incorrecta. <br>");
 }
 document.write("Tiempo transcurrido: " + tiempoTranscurrido + " segundos.");
-*/
+
 
 //Ejercicio 3
 function E3(numeros) {
@@ -131,17 +130,17 @@ function E3(numeros) {
     };
 }
 //Casos de prueba
-var numeros = [3, -2, 0, 5, -1, 0, 2];
-var resultados = E3(numeros);
+var numer = [3, -2, 0, 5, -1, 0, 2];
+var resultados = E3(numer);
 console.log("Cantidad de números negativos:", resultados.negativos);
 console.log("Cantidad de ceros:", resultados.ceros);
 console.log("Cantidad de valores mayores a cero:", resultados.positivos);
 
 //Ejercicio 4
-function E4(matriz) {
+function E4(matrix) {
     let promediosArray = [];
-    for (let i = 0; i < matriz.length; i++) {
-        let fila = matriz[i];
+    for (let i = 0; i < matrix.length; i++) {
+        let fila = matrix[i];
         let suma = 0;
         for (let j = 0; j < fila.length; j++) {
             suma += fila[j];
@@ -151,15 +150,48 @@ function E4(matriz) {
     }
     return promediosArray;
 }
-let matriz = [
+let matrix = [
     [10, 20, 30],
     [15, 25, 35],
     [5, 10, 15]
 ];
-let promediosResultantes = E4(matriz);
+let promediosResultantes = E4(matrix);
 console.log("Promedios de cada fila:", promediosResultantes);
 
 //Ejercicio 5
+function inverso(numb) {
+    let numArray = numb.toString();
+    let charArray = numArray.split('');
+    let invArray = charArray.reverse();
+    let invChar = invArray.join('');
+    let invNum = parseInt(invChar);
+    return invNum;
+}
+//Casos de prueba
+let number = 12345;
+let numeroInvertido = inverso(number);
+console.log("Número invertido:", numeroInvertido);
+console.log("Número invertido:", inverso(1223334444555556));
+//Ejercicio 6 Área de un rectángulo
+
+function Rectangulo(base, altura) {
+    let rectangulo = {
+        base: base,
+        altura: altura
+    }
+    rectangulo.calcularArea = function() {
+        return rectangulo.base * rectangulo.altura
+    }
+    rectangulo.calcularPerimetro = function() {
+        return (rectangulo.base + rectangulo.altura) *2
+    }
+    return rectangulo;
+}
+let rectangulo = Rectangulo(5, 3);
+console.log("Base: " + rectangulo.base + ", Altura: " + rectangulo.altura);
+console.log("Área: " + rectangulo.calcularArea());
+console.log("Perímetro: " + rectangulo.calcularPerimetro());
+
 
 
 
