@@ -1,0 +1,28 @@
+{
+  "name": "construccion",
+  "version": "1.0.0",
+  "description": "Laboratorio11 de TC2005B grupo 2",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doki-JP/ConstruccionDeSoftware.git"
+  },
+  "keywords": [
+    "TC2005B",
+    "Construccion",
+    "de",
+    "software"
+  ],
+  "author": "Juan Pablo Chávez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doki-JP/ConstruccionDeSoftware/issues"
+  },
+  "homepage": "https://github.com/doki-JP/ConstruccionDeSoftware#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
