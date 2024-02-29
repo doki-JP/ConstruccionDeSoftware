@@ -1,6 +1,28 @@
 {
   "dependencies": {
     "body-parser": "^1.20.2",
+    "express": "^4.18.3",
     "nodemon": "^3.1.0"
-  }
+  },
+  "name": "asd",
+  "description": "asd",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doki-JP/ConstruccionDeSoftware.git"
+  },
+  "keywords": [
+    "a"
+  ],
+  "author": "a",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doki-JP/ConstruccionDeSoftware/issues"
+  },
+  "homepage": "https://github.com/doki-JP/ConstruccionDeSoftware#readme"
 }

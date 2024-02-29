@@ -1,28 +1,27 @@
-console.log("Hola mundo de node")
+console.log("Hola mundo de node");
 //fs es el módulo filesystem, modulo para manipular archivos
-const fs = require("fs")
+const fs = require("fs");
 //Escribe en el archivo del primer parámetro lo que diga el segundo.
-fs.writeFileSync("hola.txt", "Hola cara de cola")
+fs.writeFileSync("hola.txt", "Hola cara de cola");
 
 setTimeout(() => {
-    console.log("xddddxdxdxdxdxdxddd")
-}, 2500)
-const arreglo = [1,6,234,76,2,97,22,435,5575,1233,56,1231]
+  console.log("xddddxdxdxdxdxdxddd");
+}, 2500);
+const arreglo = [1, 6, 234, 76, 2, 97, 22, 435, 5575, 1233, 56, 1231];
 //in te da el índice del arreglo, of te da el valor en el índice
-for (let item of arreglo){
-    setTimeout(()=> {
-        console.log(item);
-    }, item);   
+for (let item of arreglo) {
+  setTimeout(() => {
+    console.log(item);
+  }, item);
 }
-const prueba ="jijijija";
-console.log("soy veloz, desayuno perdedores")
+const prueba = "jijijija";
+console.log("soy veloz, desayuno perdedores");
 
-const http = require("http")
-const server = http.createServer((request, response) =>{
-    if (request.url == "/"){
-        
-        response.setHeader('Content-Type', 'text/html')
-        response.write(`<!DOCTYPE html>
+const http = require("http");
+const server = http.createServer((request, response) => {
+  if (request.url == "/") {
+    response.setHeader("Content-Type", "text/html");
+    response.write(`<!DOCTYPE html>
         <html lang="es">
         <head>
             <meta charset="UTF-8">
@@ -31,7 +30,6 @@ const server = http.createServer((request, response) =>{
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sakura.css/css/sakura.css" type="text/css">
             <link rel="stylesheet" href="estilomin.css">
         </head>
-        
         <body>
             <header>
                 <h1>Mi primera página web</h1>
@@ -178,15 +176,14 @@ const server = http.createServer((request, response) =>{
         
         </div>
         
-        </html>`)
-        response.write(prueba);
-        response.end()
-    }
-    else if (request.url == "/construir"){
-        request.on('data',(data) =>{
-            console.log(data)
-        })
-        response.write(`
+        </html>`);
+    response.write(prueba);
+    response.end();
+  } else if (request.url == "/construir") {
+    request.on("data", (data) => {
+      console.log(data);
+    });
+    response.write(`
         <!DOCTYPE html>
         <html lang="es">
         <head>
@@ -207,22 +204,17 @@ const server = http.createServer((request, response) =>{
 </form>
         </body>
         </html>
-        `)
+        `);
 
+    response.end();
+  } else {
+    response.statusCode = 404;
 
-        response.end()
-    
-    }
-    else {
-        
-        response.statusCode = 404;
-
-
-        response.write('<h1>404 PAGE NOT FOUND</h1>')
-        response.end()
-    }
-    //console.log(request);
-    console.log(request.url)
-    response.end()
-})
-server.listen(2000)
+    response.write("<h1>404 PAGE NOT FOUND</h1>");
+    response.end();
+  }
+  //console.log(request);
+  console.log(request.url);
+  response.end();
+});
+server.listen(2000);
