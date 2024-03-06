@@ -1,26 +1,32 @@
 {
-  "name": "construcciondesoftware",
+  "name": "minecraft",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "description": "Proyecto compañero del curso TC2005B grupo 2",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon main.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/doki-JP/ConstruccionDeSoftware.git"
+    "url": "git+https://bitbucket.org/ejuarez/minecraft.git"
   },
-  "author": "jp",
+  "keywords": [
+    "tc2005b"
+  ],
+  "author": "Eduardo Juarez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/doki-JP/ConstruccionDeSoftware/issues"
+    "url": "https://bitbucket.org/ejuarez/minecraft/issues"
   },
-  "homepage": "https://github.com/doki-JP/ConstruccionDeSoftware#readme",
+  "homepage": "https://bitbucket.org/ejuarez/minecraft#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
   "dependencies": {
     "body-parser": "^1.20.2",
     "ejs": "^3.1.9",
-    "express": "^4.18.3",
-    "nodemon": "^3.1.0"
+    "express": "^4.18.2",
+    "express-session": "^1.18.0"
   }
 }

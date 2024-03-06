@@ -35,7 +35,7 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item"> Home </a>
+          <a class="navbar-item" href="/"> Home </a>
 
           <a class="navbar-item" href="/construir"> Construir </a>
 
@@ -43,7 +43,7 @@
             <a class="navbar-link"> More </a>
 
             <div class="navbar-dropdown">
-              <a class="navbar-item"> About </a>
+              <a class="navbar-item" href="/materiales"> Materiales </a>
               <a class="navbar-item"> Jobs </a>
               <a class="navbar-item"> Contact </a>
               <hr class="navbar-divider" />
@@ -55,10 +55,15 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
+              <% if (username == '') { %>
               <a class="button is-primary">
-                <strong>Sign up</strong>
+                <strong>Registrarse</strong>
               </a>
-              <a class="button is-light"> Log in </a>
+              <a href="/users/login" class="button is-light"> Entrar </a>
+              <% } else { %>
+              <span> Hola <strong><%= username %> | </strong> </span>
+              <a href="/users/logout" class="button is-danger"> Salir </a>
+              <% } %>
             </div>
           </div>
         </div>
