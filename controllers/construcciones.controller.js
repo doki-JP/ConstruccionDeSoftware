@@ -1,5 +1,6 @@
 const { response } = require("express");
 const Construccion = require("../models/construccion.model");
+const fs= require('fs')
 
 exports.get_construir = (request, response, next) => {
   response.render("construir", {
@@ -10,6 +11,7 @@ exports.get_construir = (request, response, next) => {
 exports.get_materiales = (request, response, next) => {
   response.render("materiales", { username: request.session.username || "" });
 };
+
 
 exports.post_construir = (request, response, next) => {
   console.log(request.body);
@@ -23,6 +25,15 @@ exports.post_construir = (request, response, next) => {
     "Set-Cookie",
     "ultima_construccion=" + request.body.nombre + "; HttpOnly"
   );
+
+  const name = request.body.nombre;
+  const img = request.body.imagen;
+  const data = `Construcción: ${name} - Imagen: ${img}\n`;
+  fs.appendFile("construccionesdeusuarios.txt", data, (err)=> {
+    if (err) {
+        console.log(err);
+    }
+  });
   response.redirect("/");
 };
 

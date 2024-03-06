@@ -21,8 +21,12 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
+const rutasHerramientas =require('./routes/herramientas.routes')
+app.use("/herramientas", rutasHerramientas)
+
 const rutasUsuarios = require("./routes/usuarios.routes");
 app.use("/users", rutasUsuarios);
+
 
 //Middleware
 app.use((request, response, next) => {
@@ -32,7 +36,6 @@ app.use((request, response, next) => {
 
 //Registrar el middleware con el módulo construcciones
 const rutasConstrucciones = require("./routes/construcciones.routes");
-
 app.use("/", rutasConstrucciones);
 
 app.use((request, response, next) => {
