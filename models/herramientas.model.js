@@ -1,6 +1,6 @@
 const herramientas = [
     {
-        nombre: "Espada", 
+        nombre: "Espada de Netherite", 
         imagen: "https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/0f/Netherite_Sword_JE2_BE2.png",
         duracion: "500",
     }
@@ -15,6 +15,7 @@ module.exports = class Herramienta {
         this.duracion=mi_duración
     }
 
+    
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
         herramientas.push({

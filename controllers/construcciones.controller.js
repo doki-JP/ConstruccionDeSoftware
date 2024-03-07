@@ -25,7 +25,6 @@ exports.post_construir = (request, response, next) => {
     "Set-Cookie",
     "ultima_construccion=" + request.body.nombre + "; HttpOnly"
   );
-
   const name = request.body.nombre;
   const img = request.body.imagen;
   const data = `Construcción: ${name} - Imagen: ${img}\n`;
