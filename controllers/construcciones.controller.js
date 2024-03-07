@@ -45,9 +45,16 @@ exports.get_root = (request, response, next) => {
     ultima_construccion = "";
   }
   console.log(ultima_construccion);
-  response.render("construcciones", {
-    construcciones: Construccion.fetchAll(),
-    ultima_construccion: ultima_construccion,
-    username: request.session.username || "",
-  });
+
+  Construccion.fetchAll().then(([rows, fieldData]) => {
+    console.log(rows);
+      response.render("construcciones", {
+        construcciones: rows,
+        ultima_construccion: ultima_construccion,
+        username: request.session.username || "",
+      });
+})
+.catch(err => {
+    console.log(err);
+});
 };

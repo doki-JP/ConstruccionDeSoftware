@@ -1,9 +1,4 @@
-const construcciones = [
-    {
-        nombre: "casa", 
-        imagen: "https://i.blogs.es/7cfcd0/casas-en-minecraft/1366_2000.jpeg",
-    }
-];
+const db = require('../util/database');
 
 module.exports = class Construccion {
 
@@ -23,7 +18,8 @@ module.exports = class Construccion {
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
-        return construcciones;
+        return db.execute('SELECT * FROM construccion');
+            
     }
 
 }
