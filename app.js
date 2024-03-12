@@ -21,6 +21,12 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
+const csrf = require('csurf');
+const csrfProtection = csrf();
+
+//...Y después del código para inicializar la sesión... 
+app.use(csrfProtection); 
+
 const rutasHerramientas =require('./routes/herramientas.routes')
 app.use("/herramientas", rutasHerramientas)
 
@@ -36,7 +42,7 @@ app.use((request, response, next) => {
 
 //Registrar el middleware con el módulo construcciones
 const rutasConstrucciones = require("./routes/construcciones.routes");
-app.use("/", rutasConstrucciones);
+app.use("/construcciones", rutasConstrucciones);
 
 app.use((request, response, next) => {
   response.status(404);

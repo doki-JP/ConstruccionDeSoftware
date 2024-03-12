@@ -5,11 +5,14 @@ const fs= require('fs')
 exports.get_construir = (request, response, next) => {
   response.render("construir", {
     username: request.session.username || "",
+    csrfToken: request.csrfToken()
   });
 };
 
 exports.get_materiales = (request, response, next) => {
-  response.render("materiales", { username: request.session.username || "" });
+  response.render("materiales", { username: request.session.username || "",
+  csrfToken: request.csrfToken(),
+ });
 };
 
 
@@ -19,25 +22,20 @@ exports.post_construir = (request, response, next) => {
     request.body.nombre,
     request.body.imagen
   );
-  construccion.save();
-
-  response.setHeader(
+  construccion.save()
+  .then(([rows, fieldData])=>{
+    response.setHeader(
     "Set-Cookie",
     "ultima_construccion=" + request.body.nombre + "; HttpOnly"
+    
   );
-  const name = request.body.nombre;
-  const img = request.body.imagen;
-  const data = `Construcción: ${name} - Imagen: ${img}\n`;
-  fs.appendFile("construccionesdeusuarios.txt", data, (err)=> {
-    if (err) {
-        console.log(err);
-    }
-  });
-  response.redirect("/");
+  response.redirect("/construcciones")
+  })
+  .catch((err)=>{console.log(err)});
 };
 
 exports.get_root = (request, response, next) => {
-  console.log("Ruta /");
+  console.log("Ruta /construcciones");
   let ultima_construccion = request.get("Cookie");
   if (ultima_construccion) {
     ultima_construccion = ultima_construccion.split("=")[1];
@@ -46,7 +44,7 @@ exports.get_root = (request, response, next) => {
   }
   console.log(ultima_construccion);
 
-  Construccion.fetchAll().then(([rows, fieldData]) => {
+  Construccion.fetch(request.params.construccion_id).then(([rows, fieldData]) => {
     console.log(rows);
       response.render("construcciones", {
         construcciones: rows,
