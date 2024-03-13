@@ -10,28 +10,28 @@ module.exports = class Construccion {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-    return db.execute('INSERT INTO construccion (nombre, imagen, username) VALUES (?, ?, "JuanPablo")',
-        [this.nombre, this.imagen]
-    );
-
-}
+        return db.execute(
+            'INSERT INTO construccion (nombre, imagen, username) VALUES (?, ?, "rommel49")',
+            [this.nombre, this.imagen]
+        );
+    }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
         return db.execute('SELECT * FROM construccion');
-            
     }
+
     static fetchOne(id) {
-        return db.execute('SELECT * FROM construccion WHERE id=?', [id]);
-            
+        return db.execute('SELECT * FROM construccion WHERE id=?', 
+            [id]);
     }
+
     static fetch(id) {
-       if (id){
-           return this.fetchOne(id)
-       }
-       else{
-           return this.fetchAll()
-       }   
+        if (id) {
+            return this.fetchOne(id);
+        } else {
+            return this.fetchAll();
+        }
     }
 
 }
