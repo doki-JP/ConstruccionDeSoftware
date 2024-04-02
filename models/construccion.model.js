@@ -38,7 +38,9 @@ module.exports = class Construccion {
             [id]);
     }
 
-    
+    static search(valor_busqueda){
+        return db.execute('select * from construccion where nombre LIKE ?', ['%' + valor_busqueda + '%']);
+    }
 
     static fetch(id) {
         if (id) {

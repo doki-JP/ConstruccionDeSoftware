@@ -8,6 +8,8 @@ exports.get_construir = (request, response, next) => {
     }); 
 };
 
+
+
 exports.post_construir = (request, response, next) => {
     console.log(request.body);
     console.log(request.file);
@@ -47,5 +49,12 @@ exports.get_root = (request, response, next) => {
     .catch((error) => {
         console.log(error);
     });
+}
 
+exports.get_buscar = (request, response, next) =>{
+    Construccion.search(request.params.valor_busqueda).then(([construcciones,fieldData])=>{
+        return response.status(200).json({construcciones: construcciones});
+    })
+    .catch(error => {
+        console.log(error)})
 }
